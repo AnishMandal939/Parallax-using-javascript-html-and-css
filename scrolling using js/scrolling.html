@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scrolling Effect using Javascript</title>
+    <link rel="stylesheet" href="scrolling.css">
+</head>
+<body>
+    <section class="zoom">
+        <img src="./ParallaxScrollingImages/mountain1.png" id="layer1">
+        <img src="./ParallaxScrollingImages/mountain2.png" id="layer2">
+        <img src="./ParallaxScrollingImages/text2.png" id="text">
+    </section>
+    <section class="content">
+        <h2>Simple Background Scrolling Effect using Javascript</h2>
+            <p>Lorem ipsum dolor sit amet,
+             consectetur, adipisicing elit.
+              Distinctio nostrum sunt, temporibus 
+              molestias eos ullam explicabo illo quos. 
+              Tenetur possimus ratione architecto dolor 
+              deleniti eius consequuntur libero sequi adipisci laboriosam.</p>
+    </section>
+    <script type="text/javascript">
+    var layer1 = document.getElementById('layer1')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll',function(e) {
+        var offset = window.pageYOffset;
+        scroll = offset;
+        layer1.style.width = (100 + scroll/5) + '%';
+    });
+    var layer2 = document.getElementById('layer2')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll',function(e) {
+        var offset = window.pageYOffset;
+        scroll = offset;
+        layer2.style.width = (100 + scroll/5) + '%';
+        layer2.style.left = scroll/50 + '%';
+    });
+    var text = document.getElementById('text')
+    scroll = window.pageYOffset;
+    document.addEventListener('scroll',function(e) {
+        var offset = window.pageYOffset;
+        scroll = offset;
+        layer2.style.width = (100 + scroll/5) + '%';
+        text.style.top = -scroll/50 + '%';
+    });
+    </script>
+</body>
+</html>
